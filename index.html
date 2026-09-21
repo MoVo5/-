@@ -7,18 +7,11 @@
 
     <title>Movo 운동 유형 검사</title>
 
-    <!-- Pretendard 한글 폰트 -->
+    <!-- Pretendard -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
-    <!-- 카카오 JavaScript SDK -->
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js"></script>
-
     <style>
-
-        /* =========================================
-           기본 설정
-        ========================================= */
 
         * {
             box-sizing: border-box;
@@ -78,7 +71,7 @@
 
 
         /* =========================================
-           슬라이드 영역
+           슬라이드
         ========================================= */
 
         .slides {
@@ -119,6 +112,7 @@
         .screen.active {
             opacity: 1;
             visibility: visible;
+
             transform: translateX(0);
         }
 
@@ -128,7 +122,7 @@
 
 
         /* =========================================
-           상단 진행 표시
+           진행률
         ========================================= */
 
         .progress-area {
@@ -218,7 +212,7 @@
 
 
         /* =========================================
-           공통 제목
+           공통
         ========================================= */
 
         .question-number {
@@ -434,9 +428,11 @@
         }
 
         @keyframes spin {
+
             to {
                 transform: rotate(360deg);
             }
+
         }
 
         .loading-screen p {
@@ -447,7 +443,7 @@
 
 
         /* =========================================
-           결과 화면
+           결과
         ========================================= */
 
         .result-screen {
@@ -572,92 +568,56 @@
 
 
         /* =========================================
-           공유 버튼
+           링크 공유
         ========================================= */
 
         .share-area {
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 10px;
-
             margin-top: 10px;
             margin-bottom: 20px;
         }
 
         .share-button {
-            width: 46px;
-            height: 46px;
+            width: 100%;
+            height: 48px;
 
             border: none;
 
-            border-radius: 12px;
+            border-radius: 13px;
+
+            background: #e8f3fc;
+
+            color: #287fc7;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
 
             display: flex;
 
             align-items: center;
             justify-content: center;
 
-            cursor: pointer;
+            gap: 8px;
 
             transition: 0.2s;
         }
 
         .share-button:hover {
+            background: #dceefc;
+
             transform: translateY(-2px);
-        }
-
-        /* 카카오톡 */
-
-        .kakao-button {
-            background: #fee500;
-        }
-
-        .kakao-icon {
-            position: relative;
-
-            width: 25px;
-            height: 22px;
-
-            background: #191919;
-
-            border-radius: 50%;
-        }
-
-        .kakao-icon::after {
-            content: "";
-
-            position: absolute;
-
-            bottom: -3px;
-            left: 4px;
-
-            width: 7px;
-            height: 7px;
-
-            background: #191919;
-
-            transform: rotate(30deg);
-        }
-
-        /* 링크 */
-
-        .link-button {
-            background: #e8f3fc;
         }
 
         .link-icon {
             position: relative;
 
-            width: 22px;
-            height: 12px;
+            width: 18px;
+            height: 10px;
 
-            border: 3px solid #368bd1;
+            border: 2px solid #287fc7;
 
-            border-radius: 10px;
+            border-radius: 8px;
 
             transform: rotate(-45deg);
         }
@@ -667,13 +627,13 @@
 
             position: absolute;
 
-            width: 12px;
-            height: 3px;
+            width: 9px;
+            height: 2px;
 
-            background: #368bd1;
+            background: #287fc7;
 
             top: 2px;
-            left: 7px;
+            left: 6px;
         }
 
 
@@ -715,6 +675,7 @@
             .result-title {
                 font-size: 37px;
             }
+
         }
 
     </style>
@@ -728,14 +689,26 @@
     <div class="container">
 
         <!-- 진행률 -->
-        <div class="progress-area" id="progressArea">
 
-            <div class="progress-text" id="progressText">
+        <div
+            class="progress-area"
+            id="progressArea">
+
+            <div
+                class="progress-text"
+                id="progressText">
+
                 QUESTION 01 / 03
+
             </div>
 
             <div class="progress-bar">
-                <div class="progress" id="progress"></div>
+
+                <div
+                    class="progress"
+                    id="progress">
+                </div>
+
             </div>
 
         </div>
@@ -745,7 +718,7 @@
 
 
             <!-- =====================================
-                 01. 첫 화면
+                 첫 화면
             ====================================== -->
 
             <section
@@ -777,7 +750,7 @@
 
 
             <!-- =====================================
-                 02. 개인정보
+                 개인정보
             ====================================== -->
 
             <section
@@ -832,7 +805,7 @@
 
 
             <!-- =====================================
-                 03. 질문 1
+                 질문 1
             ====================================== -->
 
             <section
@@ -880,7 +853,7 @@
 
 
             <!-- =====================================
-                 04. 질문 2
+                 질문 2
             ====================================== -->
 
             <section
@@ -928,7 +901,7 @@
 
 
             <!-- =====================================
-                 05. 질문 3
+                 질문 3
             ====================================== -->
 
             <section
@@ -976,7 +949,7 @@
 
 
             <!-- =====================================
-                 06. 분석 중
+                 분석 중
             ====================================== -->
 
             <section
@@ -998,7 +971,7 @@
 
 
             <!-- =====================================
-                 07. 결과
+                 결과
             ====================================== -->
 
             <section
@@ -1013,7 +986,7 @@
                     class="result-title"
                     id="resultTitle">
 
-                    스트레칭형
+                    운동 유형
 
                 </h1>
 
@@ -1022,6 +995,8 @@
                     id="resultDescription">
                 </p>
 
+
+                <!-- 특징 -->
 
                 <div class="feature-box">
 
@@ -1033,6 +1008,8 @@
 
                 </div>
 
+
+                <!-- 추천 운동 -->
 
                 <div class="recommend-box">
 
@@ -1052,7 +1029,7 @@
                 </div>
 
 
-                <!-- 다시 검사하기 -->
+                <!-- 다시 검사 -->
 
                 <button
                     class="main-button"
@@ -1063,37 +1040,23 @@
                 </button>
 
 
-                <!-- 공유 아이콘 -->
+                <!-- 링크 공유 -->
 
                 <div class="share-area">
 
-                    <!-- 카카오톡 -->
-
                     <button
-                        class="share-button kakao-button"
-                        onclick="shareKakao()"
-                        aria-label="카카오톡으로 공유">
-
-                        <span class="kakao-icon"></span>
-
-                    </button>
-
-
-                    <!-- 링크 복사 -->
-
-                    <button
-                        class="share-button link-button"
-                        onclick="copyLink()"
-                        aria-label="링크 복사">
+                        class="share-button"
+                        onclick="shareResultLink()">
 
                         <span class="link-icon"></span>
+
+                        결과 링크 공유하기
 
                     </button>
 
                 </div>
 
             </section>
-
 
         </div>
 
@@ -1103,17 +1066,6 @@
 
 
 <script>
-
-    /* =========================================
-       카카오 JavaScript 키
-       
-       아래 값을 본인의 카카오 JavaScript 키로
-       변경하면 됨.
-    ========================================= */
-
-    const KAKAO_JAVASCRIPT_KEY =
-        "YOUR_KAKAO_JAVASCRIPT_KEY";
-
 
     /* =========================================
        검사 데이터
@@ -1127,24 +1079,11 @@
 
     let nickname = "";
 
-
-    /* =========================================
-       카카오 SDK 초기화
-    ========================================= */
-
-    if (
-        KAKAO_JAVASCRIPT_KEY !==
-        "YOUR_KAKAO_JAVASCRIPT_KEY"
-    ) {
-
-        Kakao.init(KAKAO_JAVASCRIPT_KEY);
-
-    }
+    let currentResultType = "";
 
 
     /* =========================================
        화면 이동
-       슬라이드 방식
     ========================================= */
 
     function nextScreen(screenId) {
@@ -1166,6 +1105,7 @@
         next.classList.remove("prev");
 
         next.classList.add("active");
+
     }
 
 
@@ -1186,11 +1126,12 @@
         previous.classList.remove("prev");
 
         previous.classList.add("active");
+
     }
 
 
     /* =========================================
-       개인정보 입력
+       개인정보
     ========================================= */
 
     function startQuestions() {
@@ -1320,7 +1261,7 @@
 
 
     /* =========================================
-       운동 유형 분석
+       유형 분석
     ========================================= */
 
     function analyzeResult() {
@@ -1339,17 +1280,8 @@
             let result;
 
 
-            /*
-             * 질문 3을 핵심 기준으로 사용함.
-             *
-             * 유연성 → 스트레칭형
-             * 체력 → 유산소 운동형
-             * 근육 → 무산소 운동형
-             */
-
             if (
-                answers.q3 ===
-                "flexibility"
+                answers.q3 === "flexibility"
             ) {
 
                 result = "stretching";
@@ -1357,8 +1289,7 @@
             }
 
             else if (
-                answers.q3 ===
-                "stamina"
+                answers.q3 === "stamina"
             ) {
 
                 result = "aerobic";
@@ -1384,6 +1315,9 @@
     ========================================= */
 
     function showResult(type) {
+
+        currentResultType = type;
+
 
         const title =
             document.getElementById(
@@ -1511,7 +1445,199 @@
 
 
     /* =========================================
-       다시 검사하기
+       결과 링크 생성
+    ========================================= */
+
+    function createResultLink() {
+
+        const baseUrl =
+            window.location.origin +
+            window.location.pathname;
+
+
+        const params =
+            new URLSearchParams();
+
+
+        params.set(
+            "result",
+            currentResultType
+        );
+
+
+        params.set(
+            "nickname",
+            nickname
+        );
+
+
+        return (
+            baseUrl +
+            "?" +
+            params.toString()
+        );
+
+    }
+
+
+    /* =========================================
+       결과 링크 공유
+    ========================================= */
+
+    function shareResultLink() {
+
+        if (!currentResultType) {
+
+            alert(
+                "먼저 운동 유형 검사를 완료해 주세요."
+            );
+
+            return;
+
+        }
+
+
+        const resultLink =
+            createResultLink();
+
+
+        /*
+         * 모바일/지원 브라우저에서는
+         * 운영체제의 기본 공유창을 사용함.
+         */
+
+        if (
+            navigator.share &&
+            /Android|iPhone|iPad|iPod/i.test(
+                navigator.userAgent
+            )
+        ) {
+
+            navigator.share({
+
+                title:
+                    "Movo 운동 유형 검사 결과",
+
+                text:
+                    nickname +
+                    "님의 운동 유형 검사 결과를 확인해 보세요!",
+
+                url:
+                    resultLink
+
+            })
+            .catch(() => {});
+
+
+            return;
+
+        }
+
+
+        /*
+         * PC에서는 링크를 클립보드에 복사함.
+         */
+
+        copyResultLink(resultLink);
+
+    }
+
+
+    /* =========================================
+       결과 링크 복사
+    ========================================= */
+
+    function copyResultLink(url) {
+
+        if (
+            navigator.clipboard &&
+            window.isSecureContext
+        ) {
+
+            navigator.clipboard
+                .writeText(url)
+                .then(() => {
+
+                    alert(
+                        "결과 링크가 복사되었어요."
+                    );
+
+                })
+                .catch(() => {
+
+                    fallbackCopy(url);
+
+                });
+
+        }
+
+        else {
+
+            fallbackCopy(url);
+
+        }
+
+    }
+
+
+    /* =========================================
+       링크 복사 보조
+    ========================================= */
+
+    function fallbackCopy(url) {
+
+        const textarea =
+            document.createElement("textarea");
+
+
+        textarea.value = url;
+
+
+        textarea.style.position =
+            "fixed";
+
+
+        textarea.style.left =
+            "-9999px";
+
+
+        document.body.appendChild(
+            textarea
+        );
+
+
+        textarea.select();
+
+
+        try {
+
+            document.execCommand("copy");
+
+            alert(
+                "결과 링크가 복사되었어요."
+            );
+
+        }
+
+        catch (error) {
+
+            prompt(
+                "아래 링크를 복사해 주세요.",
+                url
+            );
+
+        }
+
+
+        document.body.removeChild(
+            textarea
+        );
+
+    }
+
+
+    /* =========================================
+       다시 검사
     ========================================= */
 
     function restart() {
@@ -1524,6 +1650,8 @@
 
 
         nickname = "";
+
+        currentResultType = "";
 
 
         document
@@ -1554,192 +1682,235 @@
             });
 
 
+        /*
+         * 공유 결과 URL 제거
+         */
+
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
+
+
         nextScreen("startScreen");
 
     }
 
 
     /* =========================================
-       링크 복사
+       공유 링크로 접속했을 때
+       결과 화면 바로 표시
     ========================================= */
 
-    function copyLink() {
+    function loadSharedResult() {
 
-        const url =
-            window.location.href;
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const result =
+            params.get("result");
+
+
+        const sharedNickname =
+            params.get("nickname");
+
+
+        const validResults = [
+            "stretching",
+            "aerobic",
+            "anaerobic"
+        ];
 
 
         if (
-            navigator.clipboard &&
-            window.isSecureContext
+            result &&
+            validResults.includes(result)
         ) {
 
-            navigator.clipboard
-                .writeText(url)
-                .then(() => {
-
-                    alert(
-                        "검사 링크가 복사되었어요."
-                    );
-
-                })
-                .catch(() => {
-
-                    fallbackCopy(url);
-
-                });
-
-        }
-
-        else {
-
-            fallbackCopy(url);
-
-        }
-
-    }
+            nickname =
+                sharedNickname ||
+                "사용자";
 
 
-    /* 링크 복사 보조 함수 */
+            currentResultType =
+                result;
 
-    function fallbackCopy(url) {
 
-        const textarea =
-            document.createElement("textarea");
+            document
+                .getElementById("progressArea")
+                .style
+                .display = "none";
 
-        textarea.value = url;
 
-        textarea.style.position =
-            "fixed";
+            /*
+             * 바로 결과를 표시함.
+             */
 
-        textarea.style.left =
-            "-9999px";
-
-        document.body.appendChild(
-            textarea
-        );
-
-        textarea.select();
-
-        try {
-
-            document.execCommand("copy");
-
-            alert(
-                "검사 링크가 복사되었어요."
-            );
+            showResultWithoutAnimation(result);
 
         }
-
-        catch (error) {
-
-            prompt(
-                "아래 링크를 복사해 주세요.",
-                url
-            );
-
-        }
-
-        document.body.removeChild(
-            textarea
-        );
 
     }
 
 
     /* =========================================
-       카카오톡 공유
+       공유 결과 바로 표시
     ========================================= */
 
-    function shareKakao() {
+    function showResultWithoutAnimation(type) {
 
-        /*
-         * JavaScript 키가 입력되지 않은 경우
-         */
+        currentResultType = type;
 
-        if (
-            KAKAO_JAVASCRIPT_KEY ===
-            "5e49c63bc49c9eb43bf2f0e8e798f477"
-        ) {
 
-            alert(
-                "카카오 JavaScript 키를 코드에 입력해 주세요."
+        const title =
+            document.getElementById(
+                "resultTitle"
             );
 
-            return;
+
+        const description =
+            document.getElementById(
+                "resultDescription"
+            );
+
+
+        const list =
+            document.getElementById(
+                "featureList"
+            );
+
+
+        const recommend =
+            document.getElementById(
+                "recommendName"
+            );
+
+
+        const recommendDescription =
+            document.getElementById(
+                "recommendDescription"
+            );
+
+
+        if (type === "stretching") {
+
+            title.innerText =
+                "스트레칭형";
+
+
+            description.innerText =
+                nickname +
+                "님은 몸의 긴장을 풀고 유연성과 편안한 움직임을 중요하게 생각하는 유형이에요.";
+
+
+            list.innerHTML = `
+                <li>몸의 유연성과 가동 범위에 관심이 많아요.</li>
+                <li>무리한 운동보다 편안한 움직임을 선호해요.</li>
+                <li>운동 후 몸을 풀어주는 것을 중요하게 생각해요.</li>
+            `;
+
+
+            recommend.innerText =
+                "허리 스트레칭 기구 사용";
+
+
+            recommendDescription.innerText =
+                "허리 주변을 부드럽게 움직이며 몸의 긴장을 풀어주는 운동을 추천해요.";
 
         }
 
 
-        /*
-         * SDK가 정상적으로 초기화되지 않은 경우
-         */
+        else if (type === "aerobic") {
 
-        if (!Kakao.isInitialized()) {
+            title.innerText =
+                "유산소 운동형";
 
-            Kakao.init(
-                KAKAO_JAVASCRIPT_KEY
-            );
+
+            description.innerText =
+                nickname +
+                "님은 지속적인 움직임을 통해 체력과 지구력을 높이는 데 관심이 있는 유형이에요.";
+
+
+            list.innerHTML = `
+                <li>체력과 지구력을 높이는 것에 관심이 많아요.</li>
+                <li>일정 시간 동안 계속 움직이는 운동을 선호해요.</li>
+                <li>운동하면서 땀을 내는 것을 긍정적으로 생각해요.</li>
+            `;
+
+
+            recommend.innerText =
+                "실내 자전거";
+
+
+            recommendDescription.innerText =
+                "일정한 속도로 페달을 밟으며 자신의 체력에 맞춰 운동 강도를 조절하는 것을 추천해요.";
 
         }
 
 
-        /*
-         * 카카오톡 공유
-         */
+        else {
 
-        Kakao.Share.sendDefault({
+            title.innerText =
+                "무산소 운동형";
 
-            objectType: "feed",
 
-            content: {
+            description.innerText =
+                nickname +
+                "님은 근력과 힘을 기르는 운동에 관심이 있는 유형이에요.";
 
-                title:
-                    "Movo 운동 유형 검사",
 
-                description:
-                    "나에게 맞는 운동 유형을 확인해 보세요!",
+            list.innerHTML = `
+                <li>근육과 근력을 높이는 것에 관심이 많아요.</li>
+                <li>짧은 시간 동안 집중하는 운동을 선호해요.</li>
+                <li>자신에게 맞는 강도로 도전하는 것을 좋아해요.</li>
+            `;
 
-                imageUrl:
-                    window.location.origin +
-                    "/movo-share.png",
 
-                link: {
+            recommend.innerText =
+                "팔 근력 운동";
 
-                    mobileWebUrl:
-                        window.location.href,
 
-                    webUrl:
-                        window.location.href
+            recommendDescription.innerText =
+                "자신의 체력에 맞는 강도로 팔 근육을 사용하는 근력 운동을 추천해요.";
 
-                }
+        }
 
-            },
 
-            buttons: [
+        document
+            .querySelectorAll(".screen")
+            .forEach(screen => {
 
-                {
+                screen.classList.remove(
+                    "active",
+                    "prev"
+                );
 
-                    title:
-                        "운동 유형 검사하기",
+            });
 
-                    link: {
 
-                        mobileWebUrl:
-                            window.location.href,
-
-                        webUrl:
-                            window.location.href
-
-                    }
-
-                }
-
-            ]
-
-        });
+        document
+            .getElementById("resultScreen")
+            .classList.add("active");
 
     }
+
+
+    /* =========================================
+       페이지 로딩
+    ========================================= */
+
+    window.addEventListener(
+        "DOMContentLoaded",
+        () => {
+
+            loadSharedResult();
+
+        }
+    );
 
 </script>
 
